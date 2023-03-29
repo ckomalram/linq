@@ -2,5 +2,5 @@
 https://replit.com/languages/csharp
 
 # Comandos
-dotnet new
+dotnet new NOMBREPRO
 dotnet run
