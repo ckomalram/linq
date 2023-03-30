@@ -1,4 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Animals;
+
+// See https://aka.ms/new-console-template for more information
 LinqQueries queries = new LinqQueries();
 
 // Todas
@@ -9,6 +11,10 @@ LinqQueries queries = new LinqQueries();
 
 // where paginar > 250 And title contain 'in Action'
 ImprimirValores(queries.LibrosPage250AndTitleContain());
+
+//Obtener Animales verdes y con nombre que inicie con vocal
+var animales = new ExcerciseWhere();
+// animales.getAnimales();
 
 
 void ImprimirValores (IEnumerable<Book> listaLibros){
