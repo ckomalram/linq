@@ -10,11 +10,17 @@ LinqQueries queries = new LinqQueries();
 // ImprimirValores(queries.LibrosDps2000());
 
 // where paginar > 250 And title contain 'in Action'
-ImprimirValores(queries.LibrosPage250AndTitleContain());
+// ImprimirValores(queries.LibrosPage250AndTitleContain());
 
-//Obtener Animales verdes y con nombre que inicie con vocal
-var animales = new ExcerciseWhere();
-// animales.getAnimales();
+//ALL Todos libros con status
+Console.WriteLine($"Todos los libros con status?? R =>  {queries.LibrosStatusAll()}");
+
+//ANY Alguno d elos libros publicado en 2005
+Console.WriteLine($"Algún libro publicado en 2005?? R =>  {queries.LibrosPublicado2005()}");
+
+
+//EXERCISE WHERE : Obtener Animales verdes y con nombre que inicie con vocal
+// var animales = new ExcerciseWhere();
 
 
 void ImprimirValores (IEnumerable<Book> listaLibros){
