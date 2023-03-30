@@ -1,6 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 LinqQueries queries = new LinqQueries();
-ImprimirValores(queries.TodaLaCollection());
+
+// Todas
+// ImprimirValores(queries.TodaLaCollection());
+
+//Where > 2000
+// ImprimirValores(queries.LibrosDps2000());
+
+// where paginar > 250 And title contain 'in Action'
+ImprimirValores(queries.LibrosPage250AndTitleContain());
+
+
 void ImprimirValores (IEnumerable<Book> listaLibros){
     Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n\n", "|| Titulo ||" , "|| #Paginas ||" , "|| FechaPublicado ||");
 
