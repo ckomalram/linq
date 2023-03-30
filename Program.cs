@@ -18,7 +18,8 @@ Console.WriteLine($"Todos los libros con status?? R =>  {queries.LibrosStatusAll
 //ANY Alguno d elos libros publicado en 2005
 Console.WriteLine($"Algún libro publicado en 2005?? R =>  {queries.LibrosPublicado2005()}");
 
-
+//CONTAINS:  libros con cateogira pyhton
+ImprimirValores(queries.LibrosCategoriaPython());
 //EXERCISE WHERE : Obtener Animales verdes y con nombre que inicie con vocal
 // var animales = new ExcerciseWhere();
 
