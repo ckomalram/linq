@@ -156,6 +156,11 @@ public class LinqQueries
                                 });
     }
 
+    public double LibrosAverageTitle(){
+
+        return librosCollection.Average(p => p.Title.Length);
+    }
+
 
 
 

@@ -60,7 +60,11 @@ LinqQueries queries = new LinqQueries();
 // Console.WriteLine($"Suma cantidad de pagina de todos los libros que tengan  0 y 500 paginas =>  {queries.SumaLibrosPagina()}");
 
 // AGGREGATE: Titulo de libros que tienen fecha mayor a 2015 => 
-Console.WriteLine($"Titulo de libros que tienen fecha mayor a 2015 => \n {queries.LibrosAggregateTittle()}");
+// Console.WriteLine($"Titulo de libros que tienen fecha mayor a 2015 => \n {queries.LibrosAggregateTittle()}");
+
+
+// AVERAGE:  Promedio de caracteres de los titulos de los libros =>
+Console.WriteLine($"Promedio de caracteres de los titulos de los libros => {queries.LibrosAverageTitle()}");
 
 
 
