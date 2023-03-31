@@ -85,6 +85,15 @@ public class LinqQueries
     }
 
 
+    public IEnumerable<Book> LibrosSelectTake()
+    {
+        return librosCollection
+                    .Take(3)
+                    .Select( p=> new Book() {  Title=  p.Title, PageCount= p.PageCount, PublishedDate= p.PublishedDate});
+        // .TakeLast(3);
+    }
+
+
 
 
 

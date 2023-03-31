@@ -32,7 +32,13 @@ LinqQueries queries = new LinqQueries();
 // ImprimirValores(queries.LibrosJavaTake());
 
 // SKIP: #paginas>400 escoger 3er y 4to resultado solamente.
-ImprimirValores(queries.LibrosJavaTakeSkip());
+// ImprimirValores(queries.LibrosJavaTakeSkip());
+
+// SELECT :  Seleccionar titulo y #paginas de los 3 primeros libros
+
+ImprimirValores(queries.LibrosSelectTake());
+
+
 
 
 //EXERCISE ORDER BY : Obtener Animales verdes y con nombre que inicie con vocal
