@@ -13,13 +13,22 @@ LinqQueries queries = new LinqQueries();
 // ImprimirValores(queries.LibrosPage250AndTitleContain());
 
 //ALL Todos libros con status
-Console.WriteLine($"Todos los libros con status?? R =>  {queries.LibrosStatusAll()}");
+// Console.WriteLine($"Todos los libros con status?? R =>  {queries.LibrosStatusAll()}");
 
 //ANY Alguno d elos libros publicado en 2005
-Console.WriteLine($"Algún libro publicado en 2005?? R =>  {queries.LibrosPublicado2005()}");
+// Console.WriteLine($"Algún libro publicado en 2005?? R =>  {queries.LibrosPublicado2005()}");
 
 //CONTAINS:  libros con cateogira pyhton
-ImprimirValores(queries.LibrosCategoriaPython());
+// ImprimirValores(queries.LibrosCategoriaPython());
+
+//ORDER BY :  libros que  java ordenados por titulos desc
+// ImprimirValores(queries.LibrosJavaPorNombreAsc());
+
+//ORDER BY DESC:  libros que tengan paginas  > 450, ordenados por #paginas de forma DESC
+ImprimirValores(queries.LibrosPaginas450Desc());
+
+
+
 //EXERCISE WHERE : Obtener Animales verdes y con nombre que inicie con vocal
 // var animales = new ExcerciseWhere();
 

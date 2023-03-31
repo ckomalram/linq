@@ -46,4 +46,21 @@ public class LinqQueries
     public bool LibrosPublicado2005(){
         return librosCollection.Any(p => p.PublishedDate.Year == 2005);
     }
+
+    
+    public IEnumerable<Book> LibrosJavaPorNombreAsc(){
+        return librosCollection
+                    .Where(p => p.Categories.Contains("Java"))
+                    .OrderBy(p => p.Title);
+    }
+
+
+        public IEnumerable<Book> LibrosPaginas450Desc(){
+        return librosCollection
+                    .Where(p => p.PageCount > 450)
+                    .OrderByDescending(p => p.PageCount);
+    }
+
+
+
 }
