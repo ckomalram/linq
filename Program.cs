@@ -36,7 +36,13 @@ LinqQueries queries = new LinqQueries();
 
 // SELECT :  Seleccionar titulo y #paginas de los 3 primeros libros
 
-ImprimirValores(queries.LibrosSelectTake());
+// ImprimirValores(queries.LibrosSelectTake());
+
+
+//Count: Libros que tengan entre 200 y 500 paginas
+Console.WriteLine($"Libros que tengan entre 200 y 500 paginas => {queries.LibrosCountPage()}");
+
+
 
 
 
@@ -48,12 +54,12 @@ ImprimirValores(queries.LibrosSelectTake());
 // var animales = new ExcerciseOrderBy();
 
 
-void ImprimirValores (IEnumerable<Book> listaLibros){
-    Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n\n", "|| Titulo ||" , "|| #Paginas ||" , "|| FechaPublicado ||" );
+// void ImprimirValores (IEnumerable<Book> listaLibros){
+//     Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n\n", "|| Titulo ||" , "|| #Paginas ||" , "|| FechaPublicado ||" );
 
-    foreach (var item in listaLibros)
-    {
-        Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15} \n", item.Title , item.PageCount, item.PublishedDate.ToShortDateString() );
+//     foreach (var item in listaLibros)
+//     {
+//         Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15} \n", item.Title , item.PageCount, item.PublishedDate.ToShortDateString() );
         
-    }
-}
+//     }
+// }

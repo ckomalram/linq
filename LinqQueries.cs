@@ -93,6 +93,21 @@ public class LinqQueries
         // .TakeLast(3);
     }
 
+    public int LibrosCountPage(){
+        var rta =  librosCollection
+                    .Count(p => p.PageCount >= 200 && p.PageCount <=500);
+
+
+        return rta;
+    }
+
+        public long LibrosLongCountPage(){
+        var rta =  librosCollection
+                    .LongCount(p => p.PageCount >= 200 && p.PageCount <=500);
+
+
+        return rta;
+    }
 
 
 
