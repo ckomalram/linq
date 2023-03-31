@@ -25,21 +25,29 @@ LinqQueries queries = new LinqQueries();
 // ImprimirValores(queries.LibrosJavaPorNombreAsc());
 
 //ORDER BY DESC:  libros que tengan paginas  > 450, ordenados por #paginas de forma DESC
-ImprimirValores(queries.LibrosPaginas450Desc());
+// ImprimirValores(queries.LibrosPaginas450Desc());
+
+
+// TAKE: primeros 3 libros con fecha de publicado más reciente que tengan categoria Java.
+// ImprimirValores(queries.LibrosJavaTake());
+
+// SKIP: #paginas>400 escoger 3er y 4to resultado solamente.
+ImprimirValores(queries.LibrosJavaTakeSkip());
+
 
 //EXERCISE ORDER BY : Obtener Animales verdes y con nombre que inicie con vocal
 // var animales = new ExcerciseWhere();
 
 //EXERCISE WHERE : elementos de la colleción animal ordenados por nombre
-var animales = new ExcerciseOrderBy();
+// var animales = new ExcerciseOrderBy();
 
 
 void ImprimirValores (IEnumerable<Book> listaLibros){
-    Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n\n", "|| Titulo ||" , "|| #Paginas ||" , "|| FechaPublicado ||");
+    Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n\n", "|| Titulo ||" , "|| #Paginas ||" , "|| FechaPublicado ||" );
 
     foreach (var item in listaLibros)
     {
-        Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n", item.Title , item.PageCount, item.PublishedDate.ToShortDateString());
+        Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15} \n", item.Title , item.PageCount, item.PublishedDate.ToShortDateString() );
         
     }
 }

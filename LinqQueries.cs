@@ -35,31 +35,57 @@ public class LinqQueries
         // return from lc in librosCollection where lc.PageCount > 250 && lc.Title.Contains("in Action") select lc;
     }
 
-    public IEnumerable<Book> LibrosCategoriaPython(){
+    public IEnumerable<Book> LibrosCategoriaPython()
+    {
         return librosCollection.Where(p => p.Categories.Contains("Python"));
     }
 
-    public bool LibrosStatusAll(){
+    public bool LibrosStatusAll()
+    {
         return librosCollection.All(p => p.Status != string.Empty);
     }
 
-    public bool LibrosPublicado2005(){
+    public bool LibrosPublicado2005()
+    {
         return librosCollection.Any(p => p.PublishedDate.Year == 2005);
     }
 
-    
-    public IEnumerable<Book> LibrosJavaPorNombreAsc(){
+
+    public IEnumerable<Book> LibrosJavaPorNombreAsc()
+    {
         return librosCollection
                     .Where(p => p.Categories.Contains("Java"))
                     .OrderBy(p => p.Title);
     }
 
 
-        public IEnumerable<Book> LibrosPaginas450Desc(){
+    public IEnumerable<Book> LibrosPaginas450Desc()
+    {
         return librosCollection
                     .Where(p => p.PageCount > 450)
                     .OrderByDescending(p => p.PageCount);
     }
+
+    public IEnumerable<Book> LibrosJavaTake()
+    {
+        return librosCollection
+                    .Where(p => p.Categories.Contains("Java"))
+                    .OrderByDescending(p => p.PublishedDate)
+                    .Take(3);
+        // .TakeLast(3);
+    }
+
+    public IEnumerable<Book> LibrosJavaTakeSkip()
+    {
+        return librosCollection
+                    .Where(p => p.PageCount > 400)
+                    .Take(4)
+                    .Skip(2);
+        // .TakeLast(3);
+    }
+
+
+
 
 
 
