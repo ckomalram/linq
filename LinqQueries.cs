@@ -173,6 +173,22 @@ public class LinqQueries
         return librosCollection.ToLookup(p => p.Title[0], p => p);
     }
 
+    public IEnumerable<Book> LibrosJoin(){
+
+        var rta1 = librosCollection.Where(p => p.PublishedDate.Year > 2005);
+
+        var rta2 = librosCollection.Where(p => p.PageCount > 500);
+
+        /**
+        **1- Se realiza el join de las 2 colleaciones
+        **2- Se escoge el campo relacionado en 1a collecion
+        **3- Se escoge campo relacionado en 2da colleccion
+        **4- Se elije que retornar de la unión ...resulselector
+        **/
+        
+        return rta1.Join(rta2, p => p.Title , x => x.Title , (p ,x) => p);
+    }
+
 
 
 

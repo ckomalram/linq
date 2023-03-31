@@ -70,8 +70,11 @@ LinqQueries queries = new LinqQueries();
 // ImprimirGrupo(queries.LibrosGroupByYear());
 
 //LOOKUP: Retorna un diccionario de libros que permita consultar por primera letra del titulo
-var rtaLookup = queries.LibrosDiccionarioPorLetra();
-ImprimirDiccionario(rtaLookup, 'P');
+// var rtaLookup = queries.LibrosDiccionarioPorLetra();
+// ImprimirDiccionario(rtaLookup, 'P');
+
+// JOIN : Libros con mas de 500 paginas y otra collecion que contengan año mayor 2005, retornar ambas **simulando 
+ImprimirValores(queries.LibrosJoin());
 
 
 //EXERCISE ORDER BY : Obtener Animales verdes y con nombre que inicie con vocal
@@ -81,15 +84,15 @@ ImprimirDiccionario(rtaLookup, 'P');
 // var animales = new ExcerciseOrderBy();
 
 
-// void ImprimirValores (IEnumerable<Book> listaLibros){
-//     Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n\n", "|| Titulo ||" , "|| #Paginas ||" , "|| FechaPublicado ||" );
+void ImprimirValores (IEnumerable<Book> listaLibros){
+    Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15}\n\n", "|| Titulo ||" , "|| #Paginas ||" , "|| FechaPublicado ||" );
 
-//     foreach (var item in listaLibros)
-//     {
-//         Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15} \n", item.Title , item.PageCount, item.PublishedDate.ToShortDateString() );
+    foreach (var item in listaLibros)
+    {
+        Console.WriteLine("{0 , -60}   {1 , 15}   {2, 15} \n", item.Title , item.PageCount, item.PublishedDate.ToShortDateString() );
         
-//     }
-// }
+    }
+}
 
 // void ImprimirGrupo(IEnumerable<IGrouping<int,Book>> ListadeLibros)
 // {
