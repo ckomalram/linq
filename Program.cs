@@ -40,13 +40,21 @@ LinqQueries queries = new LinqQueries();
 
 
 //Count: Libros que tengan entre 200 y 500 paginas
-Console.WriteLine($"Libros que tengan entre 200 y 500 paginas => {queries.LibrosCountPage()}");
+// Console.WriteLine($"Libros que tengan entre 200 y 500 paginas => {queries.LibrosCountPage()}");
 
 // MIN: Libro con la menor fecha de publicación
-Console.WriteLine($"Libro con la menor fecha de publicación => {queries.LibrosMinFecha()}");
+// Console.WriteLine($"Libro con la menor fecha de publicación => {queries.LibrosMinFecha()}");
 
 // MAX: Libro con mas # paginas
-Console.WriteLine($"Libro con mas # paginas => {queries.LibrosMaxPage()}");
+// Console.WriteLine($"Libro con mas # paginas => {queries.LibrosMaxPage()}");
+
+//MINBY: Libro con min page con  paginas > 0 => 
+var librorta = queries.LibrosMinByPage();
+Console.WriteLine($"Libro con min page con  paginas > 0 =>  {librorta.Title} - {librorta.PageCount}");
+
+//MAXBY: Libro con fecha de publicación mas reciente
+var librorta2 = queries.LibrosMaxByDate();
+Console.WriteLine($"Libro con fecha de publicación mas reciente=>  {librorta2.Title} - {librorta2.PublishedDate.ToShortDateString()}");
 
 
 

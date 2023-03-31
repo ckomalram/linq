@@ -121,6 +121,19 @@ public class LinqQueries
         return librosCollection.Max(p => p.PageCount);
     }
 
+    public Book LibrosMinByPage()
+    {
+
+        return librosCollection.Where(p => p.PageCount > 0).MinBy(p => p.PageCount);
+    }
+
+    
+    public Book LibrosMaxByDate()
+    {
+
+        return librosCollection.MaxBy(p => p.PublishedDate);
+    }
+
 
 
 
