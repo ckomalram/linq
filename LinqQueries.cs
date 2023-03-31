@@ -134,6 +134,28 @@ public class LinqQueries
         return librosCollection.MaxBy(p => p.PublishedDate);
     }
 
+    public int SumaLibrosPagina(){
+        return librosCollection
+        .Where(p => p.PageCount >= 0 && p.PageCount <= 500)
+        .Sum(p => p.PageCount);
+    }
+
+    public string LibrosAggregateTittle(){
+
+        return librosCollection.Where(p => p.PublishedDate.Year > 2015)
+                                .Aggregate("", (TitulosLibros, next ) => {
+                                 if (TitulosLibros  != string.Empty)
+                                 {
+                                    TitulosLibros += "\n" + next.Title;
+                                 }else
+                                 {
+                                    TitulosLibros +=   next.Title;
+                                    
+                                 }
+                                 return TitulosLibros;
+                                });
+    }
+
 
 
 
