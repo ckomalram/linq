@@ -66,7 +66,8 @@ LinqQueries queries = new LinqQueries();
 // AVERAGE:  Promedio de caracteres de los titulos de los libros =>
 Console.WriteLine($"Promedio de caracteres de los titulos de los libros => {queries.LibrosAverageTitle()}");
 
-
+// GROUP BY: Libros que fueron publicados a partir del 2000, agrupados por años
+ImprimirGrupo(queries.LibrosGroupByYear());
 
 //EXERCISE ORDER BY : Obtener Animales verdes y con nombre que inicie con vocal
 // var animales = new ExcerciseWhere();
@@ -84,3 +85,17 @@ Console.WriteLine($"Promedio de caracteres de los titulos de los libros => {quer
         
 //     }
 // }
+
+void ImprimirGrupo(IEnumerable<IGrouping<int,Book>> ListadeLibros)
+{
+    foreach(var grupo in ListadeLibros)
+    {
+        Console.WriteLine("");
+        Console.WriteLine($"Grupo: { grupo.Key }");
+        Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "N. Paginas", "Fecha publicacion");
+        foreach(var item in grupo)
+        {
+            Console.WriteLine("{0,-60} {1, 15} {2, 15}",item.Title,item.PageCount,item.PublishedDate.Date.ToShortDateString()); 
+        }
+    }
+}
