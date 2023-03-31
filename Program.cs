@@ -27,10 +27,11 @@ LinqQueries queries = new LinqQueries();
 //ORDER BY DESC:  libros que tengan paginas  > 450, ordenados por #paginas de forma DESC
 ImprimirValores(queries.LibrosPaginas450Desc());
 
-
-
-//EXERCISE WHERE : Obtener Animales verdes y con nombre que inicie con vocal
+//EXERCISE ORDER BY : Obtener Animales verdes y con nombre que inicie con vocal
 // var animales = new ExcerciseWhere();
+
+//EXERCISE WHERE : elementos de la colleción animal ordenados por nombre
+var animales = new ExcerciseOrderBy();
 
 
 void ImprimirValores (IEnumerable<Book> listaLibros){
