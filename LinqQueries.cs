@@ -89,25 +89,38 @@ public class LinqQueries
     {
         return librosCollection
                     .Take(3)
-                    .Select( p=> new Book() {  Title=  p.Title, PageCount= p.PageCount, PublishedDate= p.PublishedDate});
+                    .Select(p => new Book() { Title = p.Title, PageCount = p.PageCount, PublishedDate = p.PublishedDate });
         // .TakeLast(3);
     }
 
-    public int LibrosCountPage(){
-        var rta =  librosCollection
-                    .Count(p => p.PageCount >= 200 && p.PageCount <=500);
+    public int LibrosCountPage()
+    {
+        var rta = librosCollection
+                    .Count(p => p.PageCount >= 200 && p.PageCount <= 500);
 
 
         return rta;
     }
 
-        public long LibrosLongCountPage(){
-        var rta =  librosCollection
-                    .LongCount(p => p.PageCount >= 200 && p.PageCount <=500);
+    public long LibrosLongCountPage()
+    {
+        var rta = librosCollection
+                    .LongCount(p => p.PageCount >= 200 && p.PageCount <= 500);
 
 
         return rta;
     }
+
+    public DateTime LibrosMinFecha()
+    {
+        return librosCollection.Min(p => p.PublishedDate);
+    }
+
+    public int LibrosMaxPage()
+    {
+        return librosCollection.Max(p => p.PageCount);
+    }
+
 
 
 

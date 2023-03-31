@@ -42,6 +42,11 @@ LinqQueries queries = new LinqQueries();
 //Count: Libros que tengan entre 200 y 500 paginas
 Console.WriteLine($"Libros que tengan entre 200 y 500 paginas => {queries.LibrosCountPage()}");
 
+// MIN: Libro con la menor fecha de publicación
+Console.WriteLine($"Libro con la menor fecha de publicación => {queries.LibrosMinFecha()}");
+
+// MAX: Libro con mas # paginas
+Console.WriteLine($"Libro con mas # paginas => {queries.LibrosMaxPage()}");
 
 
 
