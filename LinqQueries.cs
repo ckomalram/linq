@@ -167,6 +167,12 @@ public class LinqQueries
             .GroupBy(p => p.PublishedDate.Year);
     }
 
+    public ILookup<char, Book> LibrosDiccionarioPorLetra(){
+
+        //leer primera letra y agrupar el libro completo.
+        return librosCollection.ToLookup(p => p.Title[0], p => p);
+    }
+
 
 
 
